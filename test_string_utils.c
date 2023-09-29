@@ -13,8 +13,18 @@ int test_string_from_file() {
     return 0;
 }
 
+int test_strtok_to_array() {
+    TokenArray *array = strtok_to_array(strdup("comma,separated,text"), ",");
+    ctest_assert(array->length == 3);
+    ctest_assert(!strcmp(array->elements[0], "comma"));
+    ctest_assert(!strcmp(array->elements[1], "separated"));
+    ctest_assert(!strcmp(array->elements[2], "text"));
+    return 0;
+}
+
 ctest_test_suite(test_string_utils) {
     ctest_run_test(test_string_from_file);
+    ctest_run_test(test_strtok_to_array);
 }
 
 int main() {

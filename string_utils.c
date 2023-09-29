@@ -2,6 +2,8 @@
 
 #include <glib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 char *string_from_file(char const *filename) {
     char *string;
